@@ -1,0 +1,65 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.disctest{
+    color: black;
+    background-color: $background-color;
+
+    &__card{
+        background-color: white;
+        border-radius: 1.5rem;
+        height: 69vh;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border: 0px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__instructions{
+        @include subheader;
+        padding: .5rem;
+    }
+
+    &__sub-card{
+        border-radius: 1.5rem;
+        height: 69vh;
+        width: max-content;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border: 0px solid black;
+    }
+
+    &__number{
+        display: flex;
+        justify-content: center;    
+    }
+
+    &__multiplechoice{
+        display: flex;    
+
+        &-subsec{
+            background-color: $background-color;
+            display: flex;
+            flex-direction: column;
+            width: 52vh;
+            height: -webkit-fill-available;
+            justify-content: space-between;
+        }
+    }
+
+    &__question{
+        @include button;
+        border-radius: 5rem;
+        margin: 1rem;
+    }
+}

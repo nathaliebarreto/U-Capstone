@@ -1,0 +1,99 @@
+@use '../partials/typography' as *;
+@use '../partials/variables' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+//////////////////////////////////////////////////////// PAGE SIZE BREAKS ////////////////////////////////////////////////////////////////////////
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+#root {
+    height: 0;
+}
+/////////////////////////////////////////////////////////////////////////// TEXT MIXINS  ////////////////////////////////////////////////////////////////////////
+
+
+@mixin page-header {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    @include desktop{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+}
+
+@mixin subheader {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @include desktop{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+
+@mixin labels-links-buttons {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @include desktop{
+        font-size: 1rem;
+        line-height: 2.3rem;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////// FORMS and BUTTONS  ////////////////////////////////////////////////////////////////////////
+
+
+@mixin form-field {
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    border:  $slate solid 1px;
+    &:focus {
+        outline: none;
+        border: 1px solid $cloud;
+        background-color: white;
+    }
+}
+
+
+@mixin button {
+    background-color: $graphite;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: white;
+        border: 1px  $graphite solid;
+        color: $graphite;
+        // color: $text-highlight;
+    }
+}

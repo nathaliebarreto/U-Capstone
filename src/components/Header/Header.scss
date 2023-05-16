@@ -1,0 +1,35 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+}
+
+.navbar{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.0625rem solid $cloud;
+    padding: 0.5rem;
+
+    &__logo{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 4rem;
+    border: solid;
+    }
+
+    &__login{
+        @include labels-links-buttons;
+        color: black;
+        padding-right: .5rem;
+    }
+    
+}
