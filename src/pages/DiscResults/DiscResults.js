@@ -57,7 +57,7 @@ const DiscResults = ({discType, userAnswers, setUserAnswers, user, setUser}) => 
                         <div className='result__id-section'>
                             <h2 className='result__id'>{displayDisc.id}</h2>
                         </div>
-                        <p className='result__name'> {displayDisc.type} </p>
+                        <h2 className='result__name'> {displayDisc.type} </h2>
                     </div>
                     <p className='result__info'> {displayDisc.intro}</p>
                 </div>
@@ -70,25 +70,23 @@ const DiscResults = ({discType, userAnswers, setUserAnswers, user, setUser}) => 
                         </div>
                         <div className='result__weaknesses'>
                             <p className='result__weaknesses-title'>Weaknesses</p>
-                            <p className='result__strengths-info'> {displayDisc.weaknesses}</p>
+                            <p className='result__weaknesses-info'> {displayDisc.weaknesses}</p>
                         </div>
                     </div>
                 </div>
                 <div className='result__communcation'>
-                    <h2 className='result__communcation-title'>Communication</h2>
+                    <h3 className='result__title'>COMMUNICATION</h3>
                     <div className='result__communcation-info'>
                         <p>{displayDisc.communication}</p>
                     </div>
                 </div>
-                <div className='result__future'>
-                    <h2 className='result__motivation-title'>Motivation</h2>
-                    <div className='result__motivation-info'>
-                        <p>{displayDisc.motivation}</p>
-                    </div>
-                    <div className='result__career'>
-                        <h2 className='result__career-title'> Potential careers</h2>
-                        <p className='result__career-info'> {displayDisc.career}</p>
-                    </div>
+                <div className='result__motivation'>
+                    <h3 className='result__title'>MOTIVATION</h3>
+                    <p className='result__motivation-info'>{displayDisc.motivation}</p>
+                </div>
+                <div className='result__career'>
+                    <h3 className='result__title'> CARRERS</h3>
+                    <p className='result__career-info'> {displayDisc.career}</p>
                 </div>
                 </>
             )}

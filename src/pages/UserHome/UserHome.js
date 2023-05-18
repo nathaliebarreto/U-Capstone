@@ -42,40 +42,29 @@ const UserHome = ({user, setUser, userAnswers, setUserAnswers}) => {
         <> 
         {user && (
                 <div className='user'>
-                <div className='user__welcome'>
-                    <p>Welcome {user.name}</p>
-                </div>
-                <div className='user__sub'>
-                    <section className='user__exams'>
-                        <h2 className='user__exams-title'>Self discovery tests</h2>
-                        
-                        <div className='user__exams-tests'>
-                            <Link to='/disctest'>
-                                <div className='user__exams-tests-link'>
-                                    {userAnswers ? <p>DiSC Test - take again</p> : <p>DiSC Test</p> }
-                                </div>
-                            </Link>
-                        </div>
-                    </section>
-                    {userAnswers && (
-                    <section className='user__results'> 
-                        <h2  className='user__results-title'> Your Journey </h2>
-                        <div className='user__results-result' onClick={()=>{navigate(`/discresults/${user.id}`)}}>
-                                <p className='user__results-link'> DiSC results </p>
-                        </div>
-                    </section>
-                    )}
-                </div>
-                    <div  className='disc-info'>
-                        <h3 className='disc-info-title'> What is Disc?</h3>
-                        <p className='disc-info-text'> DiSC is a behavior-assessment tool that reports scores in four personality profiles</p> 
-                        <ul className='disc-info-text-ul'>
-                            <li>Dominance </li>
-                            <li>Influence</li>
-                            <li>Steadiness</li>
-                            <li>Conscientiousness</li>
-                        </ul>
-                        <p className='disc-info-text'> these profiles give insight on how you respond to conflict, what motivates you, stresses you out, and how you solve problems.</p>
+                    <div className='user__welcome'>
+                        <p>Welcome {user.name}</p>
+                    </div>
+                    <div className='user__sub'>
+                        <section className='user__exams'>
+                            <h2 className='user__exams-title'>Self discovery tests</h2>
+                            
+                            <div className='user__exams-tests'>
+                                <Link to='/disctest'>
+                                    <div className='user__exams-tests-link'>
+                                        {userAnswers ? <p>DiSC Test - take again</p> : <p>DiSC Test</p> }
+                                    </div>
+                                </Link>
+                            </div>
+                        </section>
+                        {userAnswers && (
+                        <section className='user__results'> 
+                            <h2  className='user__results-title'> Your Journey </h2>
+                            <div className='user__results-result' onClick={()=>{navigate(`/discresults/${user.id}`)}}>
+                                    <p className='user__results-link'> DiSC results </p>
+                            </div>
+                        </section>
+                        )}
                     </div>
                 </div>
             )}

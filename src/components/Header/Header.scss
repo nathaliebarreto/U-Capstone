@@ -15,9 +15,8 @@
     background-color: #F2ECE3;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    border-bottom: 0.0625rem solid $cloud;
     padding: 0.5rem;
 
     &__logo{

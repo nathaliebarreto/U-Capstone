@@ -12,16 +12,55 @@
 
 .home{
 
-    // background-color: $background-color;
-    
+    background-color: $background-color;    
+
     &__intro{
         font-size: 0.7rem;
         padding: 0.5rem;
         text-align: center;
         color: black;
-        // background-color: #F2ECE3;
-        // line-height: 1.25rem;
+        }
 
+    &__quote-container{
+        color: #453F3C;
+        display: flex;
+        padding: 1rem 0.5rem;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 50vh;
+    }
+
+    &__quote{
+        font-size: 1rem;
+        color: #453F3C;
+        text-align: center;
+    }
+
+
+    &__quote-circle{
+        border-radius: 100%;
+        // background-color: #453F40;
+        width: 12rem;
+        height: 12rem;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: column;
+        background-color: white;
+        border: 1px  #453F3C solid;
+        color: #453F3C;
+    }
+
+
+    &__hero-content-exam{
+        display: flex;
+        align-items: center;
+        padding-top: 5.5rem;
+        &-button{
+            @include button-circle;
+                border-radius: 5rem;
+                font-weight: 600;
+        }
     }
     &__hero{
         background-color: white;
@@ -30,6 +69,7 @@
         align-items: center;
         padding: 1rem .5rem;
         justify-content: space-between;
+        
 
         &-title{
             text-align: center;
@@ -55,12 +95,6 @@
                 padding: 0.5rem;
                 text-align: center;
             } 
-            &-exam{
-                &-button{
-                        @include button;
-                        width: 5rem;
-                }
-            }
         }
     }
 
@@ -68,6 +102,8 @@
     &__outro{
         padding: 1rem;
         text-align: center;
+        color: #FFFFFF;
+        font-weight: bolder;
     }
 
 
@@ -99,19 +135,9 @@
                 text-decoration: none;
             }
         }
-    
+    }
 }
 
-
+.test{
+    padding: 1.5rem;
 }
-
-// <div  className='hero__disc-info'>
-// <h3 className='hero__disc-info-title'> What is Disc?</h3>
-// <p className='hero__disc-info-text'>A DiSC assessment is a behavior-assessment tool that shows scores in four personality profiles:</p> 
-// <ul className='hero__disc-info-text-ul'>
-//     <li>Dominance </li>
-//     <li>Influence</li>
-//     <li>Steadiness</li>
-//     <li>Conscientiousness</li>
-// </ul>
-// <p className='hero__disc-info-text'> T

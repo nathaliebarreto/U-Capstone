@@ -15,6 +15,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $background-color;
+
     
     &__card{
         background-color: white;
@@ -80,4 +82,5 @@
 
 .newuser{
     padding-bottom: 1rem;
+    color: #453F3C;
 }

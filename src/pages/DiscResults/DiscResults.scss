@@ -13,6 +13,34 @@
 .result{
     padding: .5rem;
 
+    &__id{
+            
+        &-section{
+            font-size: 1rem;
+            border-radius: 100%;
+            display: flex;
+            padding: 0rem;
+            background-color: $background-color;
+            height: 3rem;
+            width: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    }
+
+    &__name{
+        font-size: 3rem;
+        text-align: center;
+        padding-left: 1rem;
+        font-weight: 900;
+    }
+
+    &__info{
+        font-size: .8rem;
+        text-align: end;
+    }
+
     &__intro{
         display: flex;
         flex-direction: column;
@@ -21,24 +49,8 @@
         &-sub{
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-        }
-
-        &-id{
-            
-
-            &-section{
-                font-size: 1rem;
-                border-radius: 100%;
-                padding: 0rem;
-                background-color: #F2ECE3;
-                height: 3rem;
-                width: 3rem;
-            }
-        }
-        &-name{
-            font-size: 1rem;
         }
     }
 
@@ -49,11 +61,14 @@
     }
     &__summary{
         padding: 1rem .5rem;
+        font-size: .9rem;
     }
 
     &__procon{
         display: flex;
         flex-direction: row;
+        margin: 0.5rem 0rem;
+        background-color: #F2ECE3;
     }
 
     &__strengths{
@@ -63,6 +78,20 @@
         align-items: center;
         margin: .5rem;
         justify-content: space-between;
+
+        &-title{
+            background-color: white;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+        }
+        &-info{
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 1rem 0rem;
+        }
     }
 
     &__weaknesses{
@@ -71,20 +100,50 @@
         width: 50%;
         align-items: center;
         margin: .5rem;
-        justify-content: space-between;
+        justify-content: space-around;
+
+        &-title{
+            background-color: white;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+        }
+        &-info{
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 1rem 0rem;
+        }
     }
 
-    &__communication{
+    &__communcation{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: .5rem;
+        padding: 1rem 0rem;
     }
 
-    &__future{
+    &__motivation{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        padding: 1rem 0rem;
+
+        &-info{
+            text-align: right;
+        }
+    }
+
+    &__career{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0rem;
+    }
+
+    &__title{
+        font-weight: bold;
     }
 }
 

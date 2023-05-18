@@ -84,7 +84,7 @@
 
 
 @mixin button {
-    background-color: $graphite;
+    background-color: #453F3C;
     color: white;
     padding: 0.5rem;
     border: none;
@@ -94,6 +94,24 @@
         background-color: white;
         border: 1px  $graphite solid;
         color: $graphite;
+        border: 1px  #453F3C solid;
         // color: $text-highlight;
     }
 }
+
+@mixin button-circle {
+    background-color: white;
+    color: #453F3C;
+    padding: .5rem;
+    border: white;
+    width: 6rem;
+    height: 6rem;
+    padding: 0.5rem;
+
+    &:hover {
+        background-color: white;
+        border: 1px  #453F3C solid;
+        color: #453F3C;
+    }
+}
+// background-color: #232940;
