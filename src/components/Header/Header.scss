@@ -8,10 +8,11 @@
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
     text-decoration: none;
+    list-style: none;
 }
 
 .navbar{
-    background-color: white;
+    background-color: #F2ECE3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,7 +24,7 @@
     height: 3rem;
     width: 3rem;
     border-radius: 4rem;
-    border: solid;
+    border: solid 1px blue($color: #000000);
     }
 
     &__login{

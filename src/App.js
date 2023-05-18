@@ -1,8 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Main from './pages/Main/Main';
-import NotFound from './pages/Main/Main';
-import NewUser from './pages/NewUser/NewUser';
+import SignUp from './pages/SignUp/SignUp';
 import DiscTest from './pages/DiSCTest/DiSCTest';
 import UserHome from './pages/UserHome/UserHome';
 import Header from './components/Header/Header'; 
@@ -18,6 +16,8 @@ function App() {
   
   const [user, setUser] = useState()
   const [discType, setDiscType] = useState();
+  const [userAnswers, setUserAnswers] = useState()
+
 
 
   return (
@@ -26,12 +26,37 @@ function App() {
       <Header/>
           <Routes>
             <Route path='/' element={<Home/>}></Route>
-            <Route path='/login' element={<Login setUser={setUser} />}></Route>
-            <Route path='/signup' element={<NewUser/>}></Route>
-            <Route path='/discexam' element={<DiscTest setDiscType={setDiscType}/>}></Route>
-            <Route path='/userprofile' element={<UserHome user={user}/>}></Route>
-            <Route path ='/discresults' element={<DiscResults result={discType}/>}></Route>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path='/login' element={<Login setUser={setUser}/>}></Route>
+            <Route path='/signup' element={<SignUp/>}></Route>
+            <Route
+              path='/disctest'
+              element={<DiscTest
+                setUserAnswers={setUserAnswers}
+                discType={discType}
+                setDiscType={setDiscType}
+                user={user}
+              />}
+            />
+            <Route
+              path='/userprofile/:userId'
+              element={<UserHome
+                user={user}
+                setUser={setUser}
+                discType={discType}
+                userAnswers={userAnswers}
+                setUserAnswers={setUserAnswers}
+              />}
+            />
+            <Route
+              path ='/discresults/:userId'
+              element={<DiscResults
+                user={user}
+                setUser={setUser}
+                discType={discType}
+                userAnswers={userAnswers}
+                setUserAnswers={setUserAnswers}
+              />}
+            />
           </Routes>
           <Footer/>
       </BrowserRouter>

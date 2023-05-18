@@ -13,11 +13,6 @@ const Header = () => {
                     <img src={logo} alt='Ü logo' className='navbar__logo'></img>
                 </Link>
             </div>
-            <div className='navbar__login'>
-                <Link to='login'>
-                    <p>Login</p>
-                </Link>                
-            </div>
         </div>
     )
 }

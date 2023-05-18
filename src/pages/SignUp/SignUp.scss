@@ -2,15 +2,16 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
-    text-decoration: none;
 }
 
-.login{
+
+.signup{
     padding: 8% 0%;
     display: flex;
     justify-content: center;

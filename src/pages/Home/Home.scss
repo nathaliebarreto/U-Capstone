@@ -12,70 +12,106 @@
 
 .home{
 
-    background-color: $background-color;
+    // background-color: $background-color;
+    
+    &__intro{
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        text-align: center;
+        color: black;
+        // background-color: #F2ECE3;
+        // line-height: 1.25rem;
 
+    }
     &__hero{
         background-color: white;
-        // border-radius: 1.5rem;
-        // height: 69vh;
-        // box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-        // border: 0px solid black;
-        height: 80vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem .5rem;
+        justify-content: space-between;
+
+        &-title{
+            text-align: center;
+            padding: 1rem 0.5rem;
+        }
+
+        &-media{
+            width: 50%;
+            &-img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+
+            &-text{
+                font-size: .8rem;
+                padding: 0.5rem;
+                text-align: center;
+            } 
+            &-exam{
+                &-button{
+                        @include button;
+                        width: 5rem;
+                }
+            }
+        }
+    }
+
+
+    &__outro{
+        padding: 1rem;
+        text-align: center;
+    }
+
+
+    &__disc-info{
+        background-color: white;
+        color: black;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-    }
 
-    &__intro{
-        @include labels-links-buttons;
-        padding: 0.5rem;
-        text-align: center;
-    }
-
-    &__hook{
-        width: -webkit-fill-available;
-        height: -webkit-fill-available;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-        background-color: $background-color;
-
-        &-card{
-            background-color: white;
-            border-radius: 1.5rem;
-            padding: 0.5rem;
-            width: 50%;
-            margin: 0.5rem;
-            /* height: 38vh; */
-            /* text-align: left; */
-            /* width: 56vh; */
-            box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-            /* border: 0px solid black; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        &-title{
+            padding: 1rem 0.5rem;
+            text-align: center;
+            background-color: #F2ECE3;
+            width: 100%;
         }
-        
         &-text{
-            width: 91%;
+            padding: 1rem;
+
+            &-ul{
+                text-align: center;
+                background-color: #F2ECE3;
+                border-radius: 3rem;
+                width: 55%;
+                height: 30vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                text-decoration: none;
+            }
         }
+    
+}
 
-    }
-
-    &__discexam{
-
-        &-button{
-            @include button;
-            width: 11rem;
-        }
-    }
-
-    &__outro{
-        padding-bottom: 0.5rem;
-        text-align: center;
-    }
 
 }
 
+// <div  className='hero__disc-info'>
+// <h3 className='hero__disc-info-title'> What is Disc?</h3>
+// <p className='hero__disc-info-text'>A DiSC assessment is a behavior-assessment tool that shows scores in four personality profiles:</p> 
+// <ul className='hero__disc-info-text-ul'>
+//     <li>Dominance </li>
+//     <li>Influence</li>
+//     <li>Steadiness</li>
+//     <li>Conscientiousness</li>
+// </ul>
+// <p className='hero__disc-info-text'> T

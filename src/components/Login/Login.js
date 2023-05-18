@@ -10,10 +10,10 @@ const Login = ({setUser}) => {
     const second = '/user';
     let navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('');
-    const [currentUser, setCurrentUser] = useState({
-        username:'',
-        password: ''
-    });
+    // const [currentUser, setCurrentUser] = useState({
+    //     username:'',
+    //     password: ''
+    // });
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -37,14 +37,12 @@ const Login = ({setUser}) => {
 
         axios.get(baseurl + second +`/${username}&${password}`).then((res)=>{
             console.log('RES.DATA', res.data)
-            setCurrentUser(res)
             setUser(res.data)
-            navigate('/userprofile')
+            navigate(`/userprofile/${res.data.id}`)
         }).catch(err => {
             console.log(err)
-            setErrorMessage("We couldn't log you in. Please check your email and password and try again.")
+            setErrorMessage("We couldn't log you in. Please check your username and password and try again.")
         })
-        
     }
 
 

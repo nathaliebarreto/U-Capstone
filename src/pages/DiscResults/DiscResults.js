@@ -1,122 +1,99 @@
 import './DiscResults.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const DiscResults = ({result}) => {
+const DiscResults = ({discType, userAnswers, setUserAnswers, user, setUser}) => {
 
     const baseurl = process.env.REACT_APP_BASE_URL;
     const route = '/discpersonalities/';
-
-    console.log('Should jut be a letter',result)
+    const params = useParams();
+    const navigate = useNavigate();
+    const answersPath = 'answers';
 
 
     const [displayDisc, setDisplayDisc] = useState()
 
-    useEffect(()=>{
+    useEffect(() => {
+        if (userAnswers) {
+            axios.get(baseurl + route + userAnswers.personalityType).then((res) =>{
+                console.log('Disc result res.data',res.data)
+                setDisplayDisc(res.data)
+            }).catch(err =>{
+                console.log(err)
+            })
+        }
+    }, [userAnswers])
 
-        axios.get(baseurl + route + result).then((res) =>{
-            console.log('HEYYYYY DATAAAA',res.data)
-            setDisplayDisc(res.data)
-        }).catch(err =>{
-            console.log(err)
-        })
-    }, [])
+
+    useEffect(() => {
+        if(!user){
+            const {userId} = params;
+            axios.get(`${baseurl}/user/${userId}`).then((res)=>{
+                console.log('THIS IS user resdata ', res.data)
+                setUser(res.data)
+            }).catch(err => {
+                console.log('MESSAGE', err)
+                navigate('/login');
+            })
+        } else {
+            axios.get(`${baseurl}/${answersPath}/${user.id}`).then((res)=>{
+                console.log('THIS IS answers RES.DATA ', res.data)
+                setUserAnswers(res.data)
+            })
+        }
+        console.log('THIS IS PARAMS',params);
+    }, [user])
+
+
+
 
     return(
-        <div>
-            <div className='result__title'> 
-                <h2> Personality type</h2>
-                <p> id </p>
-            </div>
-            <div className='result__subsec'>
-                <p className='result__sec-heading'>Personality name</p>
-                <p className='result__smalltext'> intro</p>
-            </div>
-            <div className='result__subsec'>
-                <p className='result__sec-heading'>about ID type</p>
-                <p className='result__smalltext'> Summary</p>
-            </div>
-            <div className='result__subsec'>
-                <div className='result__strengths'>
-                    <p className='result__sec-heading'>strengths</p>
-                    <p className='result__smalltext'> info</p>
+        <div className='result'>
+            {displayDisc && (
+                <>
+                <div className='result__intro'> 
+                    <div className='result__intro-sub'>
+                        <div className='result__id-section'>
+                            <h2 className='result__id'>{displayDisc.id}</h2>
+                        </div>
+                        <p className='result__name'> {displayDisc.type} </p>
+                    </div>
+                    <p className='result__info'> {displayDisc.intro}</p>
                 </div>
-                <div className='result__weaknesses'>
-                    <p className='result__sec-heading'>weaknesses</p>
-                    <p className='result__smalltext'> info</p>
+                <div className='result__indepth'>
+                    <p className='result__summary'> {displayDisc.summary}</p>
+                    <div className='result__procon'>
+                        <div className='result__strengths'>
+                            <p className='result__strengths-title'>Strengths</p>
+                            <p className='result__strengths-info'> {displayDisc.strengths}</p>
+                        </div>
+                        <div className='result__weaknesses'>
+                            <p className='result__weaknesses-title'>Weaknesses</p>
+                            <p className='result__strengths-info'> {displayDisc.weaknesses}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className='result__subsec'>
-                <h2>Communication</h2>
-                <div>
-                    <p>communicaiton info</p>
+                <div className='result__communcation'>
+                    <h2 className='result__communcation-title'>Communication</h2>
+                    <div className='result__communcation-info'>
+                        <p>{displayDisc.communication}</p>
+                    </div>
                 </div>
-            </div>
-            <div className='result__subsec'>
-                <h2>motivation</h2>
-                <div>
-                    <p>motivation info</p>
+                <div className='result__future'>
+                    <h2 className='result__motivation-title'>Motivation</h2>
+                    <div className='result__motivation-info'>
+                        <p>{displayDisc.motivation}</p>
+                    </div>
+                    <div className='result__career'>
+                        <h2 className='result__career-title'> Potential careers</h2>
+                        <p className='result__career-info'> {displayDisc.career}</p>
+                    </div>
                 </div>
-                <div>
-                    <h3> potential careers</h3>
-                    <p> jobs</p>
-                </div>
-            </div>
-
-            <div >
-
-            </div>
-            {/* <p>{displayDisc.}</p> */}
-            <p>here are your disc resaults </p>
-            {/* {displayDisc.map((type) => (
-                <div key={type.id}>
-                <p>ID: {type.id}</p>
-                <p>Type: {type.type}</p>
-                <p>Nickname: {type.nickname}</p>
-                <p>Abbreviation: {type.abbreviation}</p>
-                <p>Introduction: {type.intro}</p>
-                <p>Summary: {type.summary}</p>
-                <p>Strengths: {type.strengths}</p>
-                <p>Weaknesses: {type.weaknesses}</p>
-                <p>Communication: {type.communication}</p>
-                <p>Motivation: {type.motivation}</p>
-                <p>Career: {type.career}</p>
-                </div>
-            ))} */}
-                    {displayDisc && (
-                            <>
-                                                    <div key={displayDisc.id}>
-                                                            <p>ID: {displayDisc.id}</p>
-                                                            <p>displayDisc: {displayDisc.displayDisc}</p>
-                                                            <p>Nickname: {displayDisc.nickname}</p>
-                                                            <p>Abbreviation: {displayDisc.abbreviation}</p>
-                                                            <p>Introduction: {displayDisc.intro}</p>
-                                                            <p>Summary: {displayDisc.summary}</p>
-                                                            <p>Strengths: {displayDisc.strengths}</p>
-                                                            <p>Weaknesses: {displayDisc.weaknesses}</p>
-                                                            <p>Communication: {displayDisc.communication}</p>
-                                                            <p>Motivation: {displayDisc.motivation}</p>
-                                                            <p>Career: {displayDisc.career}</p>
-                                                            </div>
-                                                
-                        </>
-                    )}
+                </>
+            )}
         </div>
     )
 }
 
 export default DiscResults;
-
-// {filteredVideos.map ((vid) => {
-//     return (
-//         <Link to={`/video/${vid.id}`} > 
-//             <div className="nextvid" > 
-//                 <img className="nextvid__pic" src={vid.image}  alt="next-playing-video"></img>
-//                 <div className="nextvid__info"> 
-//                     <p className='nextvid__info-bold'>{vid.title}</p>
-//                     <p>{vid.channel}</p>
-//                 </div>
-//                 <br></br>
-//             </div>
-//         </Link>)} 
-// )}
