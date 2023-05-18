@@ -1,0 +1,83 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+}
+
+.login{
+    padding: 8% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__card{
+        background-color: white;
+        border-radius: 1.5rem;
+        height: 28.5rem;
+        width: 22rem;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border: 0px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__header{
+        padding: .5rem 0.5rem;
+        font-size: 1.7rem;
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        height: -webkit-fill-available;
+        // width: 60%;
+        // justify-content: space-evenly;
+        &-subsec{
+            padding-top: 1rem;
+        }
+    }
+
+    &__title{
+        @include labels-links-buttons;
+        line-height: 2rem;
+    }
+
+    &__input{
+        @include form-field;
+        border-radius: 15px;
+        padding: 0.5rem 1rem;
+        margin: 0.25rem 0rem;
+        width: 14rem;
+    }
+
+    &__button{
+        @include button;
+        padding: .5rem;
+        margin: 1.5rem 0rem;
+        border-radius: 15px;
+        width: 7rem;
+        font-size: 14px;
+    }
+
+    &__error-message{
+        @include labels-links-buttons;
+        line-height: 1.25rem;
+        color: red;
+        width: 61%;
+        
+    }
+
+}
+
+.newuser{
+    padding-bottom: 1rem;
+}

@@ -1,0 +1,90 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.result{
+    padding: .5rem;
+
+    &__intro{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem .5rem;
+    
+        &-sub{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-id{
+            
+
+            &-section{
+                font-size: 1rem;
+                border-radius: 100%;
+                padding: 0rem;
+                background-color: #F2ECE3;
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+        &-name{
+            font-size: 1rem;
+        }
+    }
+
+    
+    &__indepth{
+        display: flex;
+        flex-direction: column;
+    }
+    &__summary{
+        padding: 1rem .5rem;
+    }
+
+    &__procon{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__strengths{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        margin: .5rem;
+        justify-content: space-between;
+    }
+
+    &__weaknesses{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        margin: .5rem;
+        justify-content: space-between;
+    }
+
+    &__communication{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .5rem;
+    }
+
+    &__future{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
