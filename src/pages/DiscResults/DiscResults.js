@@ -63,6 +63,7 @@ const DiscResults = ({discType, userAnswers, setUserAnswers, user, setUser}) => 
                 </div>
                 <div className='result__indepth'>
                     <p className='result__summary'> {displayDisc.summary}</p>
+                    {/* <div className="result__summary-box"></div> */}
                     <div className='result__procon'>
                         <div className='result__strengths'>
                             <p className='result__strengths-title'>Strengths</p>
@@ -72,21 +73,23 @@ const DiscResults = ({discType, userAnswers, setUserAnswers, user, setUser}) => 
                             <p className='result__weaknesses-title'>Weaknesses</p>
                             <p className='result__weaknesses-info'> {displayDisc.weaknesses}</p>
                         </div>
+                        <div className="result__procon-box"></div>
                     </div>
                 </div>
                 <div className='result__communcation'>
                     <h3 className='result__title'>COMMUNICATION</h3>
-                    <div className='result__communcation-info'>
-                        <p>{displayDisc.communication}</p>
-                    </div>
+                    <p className='result__communcation-info'>{displayDisc.communication}</p>
+                    <div className="result__communication-box"></div>
                 </div>
                 <div className='result__motivation'>
                     <h3 className='result__title'>MOTIVATION</h3>
                     <p className='result__motivation-info'>{displayDisc.motivation}</p>
+                    <div className="result__motivation-box"></div>
                 </div>
                 <div className='result__career'>
                     <h3 className='result__title'> CARRERS</h3>
                     <p className='result__career-info'> {displayDisc.career}</p>
+                    <div className="result__carrer-box"></div>
                 </div>
                 </>
             )}

@@ -12,14 +12,20 @@
 
 .home{
 
-    background-color: $background-color;    
+    // background-color: $background-color;    
 
     &__intro{
         font-size: 0.7rem;
         padding: 0.5rem;
         text-align: center;
-        color: black;
+        color: white;        
+        @include tablet{
+            font-size: 1rem;
         }
+        @include desktop{
+            font-size: 1.5rem;
+        }
+    }
 
     &__quote-container{
         color: #453F3C;
@@ -27,13 +33,18 @@
         padding: 1rem 0.5rem;
         justify-content: space-around;
         flex-direction: row;
-        height: 50vh;
+        height: 66vh;
     }
 
     &__quote{
         font-size: 1rem;
         color: #453F3C;
         text-align: center;
+        @include tablet{
+            font-size: 1.3rem;
+        }  @include desktop{
+            font-size: 2.3rem
+        }
     }
 
 
@@ -49,6 +60,15 @@
         background-color: white;
         border: 1px  #453F3C solid;
         color: #453F3C;
+
+        @include tablet{
+            width: 20rem;
+            height: 20rem;
+        }
+        @include desktop{
+            width: 30rem;
+            height: 30rem;
+        }
     }
 
 
@@ -60,6 +80,19 @@
             @include button-circle;
                 border-radius: 5rem;
                 font-weight: 600;
+                border: .5px  #453F3C solid;
+                @include tablet{
+                    width: 8rem;
+                    height: 8rem;
+                }
+                @include desktop{
+                    width: 12rem;
+                    height: 12rem;
+                    padding: 0.5rem;
+                    font-size: 1.3rem;
+                    border-radius: 100%;
+                }
+
         }
     }
     &__hero{
@@ -69,11 +102,15 @@
         align-items: center;
         padding: 1rem .5rem;
         justify-content: space-between;
+        border-radius: .3rem;
         
 
         &-title{
             text-align: center;
-            padding: 1rem 0.5rem;
+            // padding: 1rem 0.5rem;
+            @include tablet{
+                font-size: 1.7rem;
+            }
         }
 
         &-media{
@@ -94,6 +131,12 @@
                 font-size: .8rem;
                 padding: 0.5rem;
                 text-align: center;
+                @include tablet{
+                    font-size: 1rem;
+                }
+                @include desktop{
+                    font-size: 1.2rem;
+                }
             } 
         }
     }
@@ -106,38 +149,68 @@
         font-weight: bolder;
     }
 
-
-    &__disc-info{
-        background-color: white;
-        color: black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        &-title{
-            padding: 1rem 0.5rem;
-            text-align: center;
-            background-color: #F2ECE3;
-            width: 100%;
-        }
-        &-text{
-            padding: 1rem;
-
-            &-ul{
-                text-align: center;
-                background-color: #F2ECE3;
-                border-radius: 3rem;
-                width: 55%;
-                height: 30vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                text-decoration: none;
-            }
-        }
-    }
 }
 
 .test{
     padding: 1.5rem;
+    color: white;
+}
+
+.disc{
+    &-info{
+        // color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('../../assets/media/and-machines-vqTWfa4DjEk-unsplash.jpg');
+        background-size: cover;
+
+    }
+    
+    &-info-text{
+        padding: 1rem 0.9rem;
+        display: flex;
+        // background-color: white;
+        text-align: center;
+        border-radius: 50%;
+        margin: 1rem 0.5rem;
+        justify-content: space-evenly;
+        font-size: .9rem;
+        color: white;
+
+        @include tablet{
+            padding: 2rem 1rem;
+            border-radius: 51%;
+            margin: 1.5rem 0.5rem;
+            font-size: 0.9rem;
+        } 
+        @include desktop{
+            // padding: 4rem 1rem;
+            font-size: 2.2rem;
+        }
+
+        &-ul{
+            text-align: center;
+            border-radius: 3rem;
+            font-weight: bolder;
+            width: 55%;
+            height: 30vh;
+            display: flex;
+            color: white;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-decoration: none;
+        }
+    }
+    &-info-title{
+        padding: .5rem;
+        color: white;
+        text-align: center;
+        width: 100%;
+        font-size: 1.6rem;
+        @include tablet{
+            font-size: 1.7rem;
+        }
+    }
+
 }

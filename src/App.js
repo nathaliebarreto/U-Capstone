@@ -11,7 +11,6 @@ import { useState } from 'react';
 import DiscResults from './pages/DiscResults/DiscResults';
 
 
-
 function App() {
   
   const [user, setUser] = useState()

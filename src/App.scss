@@ -1,0 +1,13 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/typography' as *;
+@use './styles/partials/variables' as *;
+
+.app{
+    background-image: url('./assets//media/and-machines-vqTWfa4DjEk-unsplash.jpg');
+    background-size: contain;
+    // height: 100vh;
+
+    @include tablet{
+        background-size: cover;
+    }
+}

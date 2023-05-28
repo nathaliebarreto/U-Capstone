@@ -12,11 +12,18 @@
 
 
 .user{
+    color: white;
 
     &__welcome{
         padding: 0.5rem;
         font-weight: 700;
         font-size: .8rem;
+        @include tablet{
+            font-size: 1.1rem;
+        }
+        @include desktop {
+            font-size: 1.5rem;
+        }
     }
 
     &__sub{
@@ -36,23 +43,33 @@
         flex-direction: column;
         width: 85%;
         margin: 0.5rem;
+        border: 1px solid white;
+
 
         &-title{
             text-align: center;
-            color: #453F3C;
+            color: white;
             font-size: 1rem;
+            @include desktop {
+                font-size: 1.5rem;
+            }
         }
 
         &-tests{
-            background-color: #F2ECE3;
             border-radius: 0.5rem;
             padding: 5%;
             margin: 1rem 0rem;
             align-items: center;
+            background-size: cover;
+            background-image: url(../../assets/media/circle-orange.jpeg);
+
 
             &-link{
                 text-align: center;
                 color: #453F3C;
+                @include desktop {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
@@ -65,11 +82,16 @@
         flex-direction: column;
         width: 85%;
         margin: 0.5rem;
+        border: 1px solid white;
             
         &-title{
             text-align: center;
-            color: #453F3C;
+            color: white;
             font-size: 1rem;
+            @include desktop {
+                font-size: 1.5rem;
+            }
+            
         }
 
         &-result{
@@ -78,44 +100,51 @@
             padding: 5%;
             margin: 1rem 0rem;
             align-items: center;
+            background-size: cover;
+            background-image: url(../../assets/media/circle-orange.jpeg);
+
+            
         }
         &-link{
             text-align: center;
             color: #453F3C;
+            @include desktop {
+                font-size: 1.5rem;
+            }
         }
     }
 }
 
 
-.disc-info{
-    background-color: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: .5rem;
+// .disc-info{
+//     background-color: white;
+//     color: black;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-top: .5rem;
 
-    &-title{
-        padding: 1rem 0.5rem;
-        text-align: center;
-        background-color: #F2ECE3;
-        width: 100%;
-    }
-    &-text{
-        padding: 1.5rem 0.5rem;
-        text-align: center;
-        font-size: .8rem;
+//     &-title{
+//         padding: 1rem 0.5rem;
+//         text-align: center;
+//         background-color: #F2ECE3;
+//         width: 100%;
+//     }
+//     &-text{
+//         padding: 1.5rem 0.5rem;
+//         text-align: center;
+//         font-size: .8rem;
 
-        &-ul{
-            text-align: center;
-            background-color: #F2ECE3;
-            border-radius: 3rem;
-            width: 55%;
-            height: 30vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            text-decoration: none;
-        }
-    }
-}
+//         &-ul{
+//             text-align: center;
+//             background-color: #F2ECE3;
+//             border-radius: 3rem;
+//             width: 55%;
+//             height: 30vh;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: space-evenly;
+//             text-decoration: none;
+//         }
+    
+

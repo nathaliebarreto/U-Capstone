@@ -12,7 +12,7 @@
 }
 
 .navbar{
-    background-color: #F2ECE3;
+    // background-color: #F2ECE3;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -24,6 +24,14 @@
     width: 3rem;
     border-radius: 4rem;
     border: solid 1px blue($color: #000000);
+    @include tablet{
+        height: 3.2rem;
+        width: 3.2rem;
+    }
+    @include desktop{
+        height: 5.8rem;
+        width: 5.8rem;
+    }
     }
 
     &__login{

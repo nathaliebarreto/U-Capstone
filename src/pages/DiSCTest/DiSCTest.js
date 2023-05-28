@@ -45,13 +45,13 @@ const DiscTest = ({ setDiscType, user, discType, setUserAnswers }) => {
 
 
         if (d === i && d > s && d > c) {
-            return "DI/ID";
+            return "DIID";
         } else if ( d === c && d > i && d > s){
-            return  "DC/CD";
+            return  "DCCD";
         } else if ( i === s && i > d && i > c){
-            return "IS/SI";
+            return "ISSI";
         }else if( s === c && d > s && i > s){
-            return "SC/CS";
+            return "SCCS";
         } else if (d > i && d > s && d > c) {
             return "D";
         } else if (i > d && i > s && i > c) {
@@ -120,13 +120,13 @@ const DiscTest = ({ setDiscType, user, discType, setUserAnswers }) => {
         <div className='disctest'>
             <div className= 'disctest__card'>
                 <div className='disctest__instructions'>
-                <p>Select only one word from each set that you feel describes you best right now.</p>
+                <p>Select the word you feel describes you best right now</p>
                 </div>
                 {currentQuestion && 
                     <>
                         <div className='disctest__sub-card'>
                             <div className='disctest__number'>
-                                <p> x of x</p>
+                                <p> Select one </p>
                             </div>
                             <div className='disctest__multiplechoice'>
                                 <div className='disctest__multiplechoice-subsec'>
